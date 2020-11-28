@@ -1,0 +1,2364 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     96796,       2356]
+NotebookOptionsPosition[     96413,       2342]
+NotebookOutlinePosition[     96749,       2357]
+CellTagsIndexPosition[     96706,       2354]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Gabriel Margolis, UID : 116474634, 5/10/20\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\
+",
+ StyleBox["Sort Comparisons",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.798667793427618*^9, 
+  3.798667844019392*^9}},ExpressionUUID->"8ff3296c-1421-4d42-aaaf-\
+0ef2343499cc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"SETUP", " ", "CODE"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"xscale", " ", "=", " ", "15"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"yscale", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"valuesOriginal", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "p", ",", "b", ",", "g", ",", "y", ",", "o", ",", "pi", ",", "r", ",", 
+       "br", ",", "gr", ",", "bl"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p", ",", "b", ",", "g", ",", "y", ",", "o", ",", "pi", ",", "r", ",", 
+       "br", ",", "gr", ",", "bl"}], "}"}], " ", "=", " ", 
+     RowBox[{"Input", "[", 
+      RowBox[{
+      "\"\<Edit the 10 numbers in the brackets to sort seperated by commas or \
+just run the randomally generated numbers. Make sure there are no number that \
+are the same as it will sort correctly but will not display right.(for scale \
+reasons keep numbers between 1-99\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}], ",", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "99"}], "}"}], "]"}]}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"xvalues", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "p1", ",", " ", "b1", ",", " ", "g1", ",", " ", "y1", ",", " ", "o1", 
+       ",", "pi1", ",", " ", "r1", ",", "br1", ",", "gr1", ",", "bl1"}], 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p1", ",", " ", "b1", ",", " ", "g1", ",", " ", "y1", ",", " ", "o1", 
+       ",", "pi1", ",", " ", "r1", ",", "br1", ",", "gr1", ",", "bl1"}], 
+      "}"}], "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0", "*", "xscale"}], ",", 
+       RowBox[{"1", "*", "xscale"}], ",", 
+       RowBox[{"2", "*", "xscale"}], ",", 
+       RowBox[{"3", "*", "xscale"}], ",", 
+       RowBox[{"4", "*", "xscale"}], ",", 
+       RowBox[{"5", "*", "xscale"}], ",", 
+       RowBox[{"6", "*", "xscale"}], ",", 
+       RowBox[{"7", "*", "xscale"}], ",", 
+       RowBox[{"8", "*", "xscale"}], ",", 
+       RowBox[{"9", "*", "xscale"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"yvalues", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "p2", ",", "b2", ",", "g2", ",", "y2", ",", "o2", ",", "pi2", ",", "r2",
+        ",", "br2", ",", "gr2", ",", "bl2"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p2", ",", "b2", ",", "g2", ",", "y2", ",", "o2", ",", "pi2", ",", "r2",
+        ",", "br2", ",", "gr2", ",", "bl2"}], "}"}], "=", "valuesOriginal"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"length", " ", "=", " ", "11"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"BUBBLE", " ", "SORT", " ", "CODE"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"valuesBubbleSort", "=", " ", "valuesOriginal"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"temp1", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"graphicsBubbleList", " ", "=", " ", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"graphicsBubbleList", ",", 
+      RowBox[{"Show", "[", "\[IndentingNewLine]", "         ", 
+       RowBox[{
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<Bubble Sort\>\"", ",", "Bold", ",", "White", ",", "20"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"xscale", "*", 
+               RowBox[{"10", "/", "2"}]}], ",", 
+              RowBox[{"yscale", "*", "25"}]}], "}"}]}], "]"}], "}"}], "]"}], 
+        ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Purple", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"p1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"p1", "+", "xscale"}], ",", "p2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "p", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"p1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"p2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"b1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"b1", "+", "xscale"}], ",", "b2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "b", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"b1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"b2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"g1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"g1", "+", "xscale"}], ",", "g2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "g", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"g1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"g2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Yellow", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"y1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"y1", "+", "xscale"}], ",", "y2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "y", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"y1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"y2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"o1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"o1", "+", "xscale"}], ",", "o2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "o", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"o1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"o2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Pink", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"pi1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"pi1", "+", "xscale"}], ",", "pi2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "pi", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"pi1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"pi2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Red", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r1", "+", "xscale"}], ",", "r2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "r", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"r2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Brown", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"br1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"br1", "+", "xscale"}], ",", "br2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "br", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"br1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"br2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Gray", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"gr1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"gr1", "+", "xscale"}], ",", "gr2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "gr", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"gr1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"gr2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Cyan", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"bl1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"bl1", "+", "xscale"}], ",", "bl2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "bl", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"bl1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"bl2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}]}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+      RowBox[{"i", "\[LessEqual]", 
+       RowBox[{"length", "-", "1"}]}], ",", 
+      RowBox[{"i", "+=", "1"}], ",", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"j", " ", "=", " ", "1"}], ",", 
+         RowBox[{"j", "\[LessEqual]", 
+          RowBox[{"length", "-", "i", "-", "1"}]}], ",", 
+         RowBox[{"j", "+=", "1"}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesBubbleSort", "[", 
+              RowBox[{"[", "j", "]"}], "]"}], ">", 
+             RowBox[{"valuesBubbleSort", "[", 
+              RowBox[{"[", 
+               RowBox[{"j", "+", "1"}], "]"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", "\t", 
+            RowBox[{
+             RowBox[{"temp1", " ", "=", " ", 
+              RowBox[{"valuesBubbleSort", "[", 
+               RowBox[{"[", "j", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+             "\t", 
+             RowBox[{
+              RowBox[{"valuesBubbleSort", "[", 
+               RowBox[{"[", "j", "]"}], "]"}], " ", "=", " ", 
+              RowBox[{"valuesBubbleSort", "[", 
+               RowBox[{"[", 
+                RowBox[{"j", "+", "1"}], "]"}], "]"}]}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{
+              RowBox[{"valuesBubbleSort", "[", 
+               RowBox[{"[", 
+                RowBox[{"j", "+", "1"}], "]"}], "]"}], " ", "=", " ", 
+              "temp1"}], ";", "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "p"}], 
+               ",", " ", 
+               RowBox[{"p1", "=", 
+                RowBox[{"p1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "b"}], 
+               ",", " ", 
+               RowBox[{"b1", "=", 
+                RowBox[{"b1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "g"}], 
+               ",", " ", 
+               RowBox[{"g1", "=", 
+                RowBox[{"g1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "y"}], 
+               ",", " ", 
+               RowBox[{"y1", "=", 
+                RowBox[{"y1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "o"}], 
+               ",", " ", 
+               RowBox[{"o1", "=", 
+                RowBox[{"o1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "pi"}], 
+               ",", " ", 
+               RowBox[{"pi1", "=", 
+                RowBox[{"pi1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "r"}], 
+               ",", " ", 
+               RowBox[{"r1", "=", 
+                RowBox[{"r1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "br"}], 
+               ",", " ", 
+               RowBox[{"br1", "=", 
+                RowBox[{"br1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "gr"}], 
+               ",", " ", 
+               RowBox[{"gr1", "=", 
+                RowBox[{"gr1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", "+", "1"}], "]"}], "]"}], "\[Equal]", "bl"}], 
+               ",", " ", 
+               RowBox[{"bl1", "=", 
+                RowBox[{"bl1", "+", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "p"}], ",", " ", 
+               
+               RowBox[{"p1", "=", 
+                RowBox[{"p1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "b"}], ",", " ", 
+               
+               RowBox[{"b1", "=", 
+                RowBox[{"b1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "g"}], ",", " ", 
+               
+               RowBox[{"g1", "=", 
+                RowBox[{"g1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "y"}], ",", " ", 
+               
+               RowBox[{"y1", "=", 
+                RowBox[{"y1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "o"}], ",", " ", 
+               
+               RowBox[{"o1", "=", 
+                RowBox[{"o1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "pi"}], ",", " ", 
+               RowBox[{"pi1", "=", 
+                RowBox[{"pi1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "r"}], ",", " ", 
+               
+               RowBox[{"r1", "=", 
+                RowBox[{"r1", "-", "xscale"}]}]}], "]"}], ";", " ", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "br"}], ",", " ", 
+               RowBox[{"br1", "=", 
+                RowBox[{"br1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "gr"}], ",", " ", 
+               RowBox[{"gr1", "=", 
+                RowBox[{"gr1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"valuesBubbleSort", "[", 
+                 RowBox[{"[", "j", "]"}], "]"}], "\[Equal]", "bl"}], ",", " ", 
+               RowBox[{"bl1", "=", 
+                RowBox[{"bl1", "-", "xscale"}]}]}], "]"}], ";", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"AppendTo", "[", 
+              RowBox[{"graphicsBubbleList", ",", 
+               RowBox[{"Show", "[", "\[IndentingNewLine]", "\t", 
+                RowBox[{
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<Bubble Sort\>\"", ",", "Bold", ",", "White", ",", 
+                    "20"}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"xscale", "*", 
+                    RowBox[{"10", "/", "2"}]}], ",", 
+                    RowBox[{"yscale", "*", "25"}]}], "}"}]}], "]"}], "}"}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Purple", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"p1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"p1", "+", "xscale"}], ",", "p2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "p", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"p1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"p2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Blue", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"b1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"b1", "+", "xscale"}], ",", "b2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "b", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"b1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"b2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Green", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"g1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"g1", "+", "xscale"}], ",", "g2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "g", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"g1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"g2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Yellow", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"y1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"y1", "+", "xscale"}], ",", "y2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "y", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"y1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"y2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Orange", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"o1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"o1", "+", "xscale"}], ",", "o2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "o", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"o1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"o2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Pink", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"pi1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"pi1", "+", "xscale"}], ",", "pi2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "pi", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"pi1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"pi2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}],
+                   "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Red", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"r1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"r1", "+", "xscale"}], ",", "r2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "r", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"r1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"r2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+                  "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Brown", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"br1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"br1", "+", "xscale"}], ",", "br2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "br", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"br1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"br2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}],
+                   "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Gray", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"gr1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"gr1", "+", "xscale"}], ",", "gr2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "gr", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"gr1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"gr2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}],
+                   "]"}], ",", "\[IndentingNewLine]", "\t", 
+                 RowBox[{"Graphics", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"Cyan", ",", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"bl1", ",", "0"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"bl1", "+", "xscale"}], ",", "bl2"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", "bl", "]"}], ",", "Bold", ",", 
+                    " ", "18"}], " ", "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"bl1", "+", 
+                    RowBox[{"xscale", "/", "2"}]}], ",", 
+                    RowBox[{"bl2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}],
+                   "]"}]}], "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", 
+           "]"}], ";"}]}], "]"}], ";"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"INSERTION", " ", "SORT", " ", "CODE"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"key", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"valuesInsertionSort", " ", "=", " ", "valuesOriginal"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p1", ",", " ", "b1", ",", " ", "g1", ",", " ", "y1", ",", " ", "o1", 
+       ",", "pi1", ",", " ", "r1", ",", "br1", ",", "gr1", ",", "bl1"}], 
+      "}"}], "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0", "*", "xscale"}], ",", 
+       RowBox[{"1", "*", "xscale"}], ",", 
+       RowBox[{"2", "*", "xscale"}], ",", 
+       RowBox[{"3", "*", "xscale"}], ",", 
+       RowBox[{"4", "*", "xscale"}], ",", 
+       RowBox[{"5", "*", "xscale"}], ",", 
+       RowBox[{"6", "*", "xscale"}], ",", 
+       RowBox[{"7", "*", "xscale"}], ",", 
+       RowBox[{"8", "*", "xscale"}], ",", 
+       RowBox[{"9", "*", "xscale"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"graphicsInsertionList", " ", "=", " ", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"graphicsInsertionList", ",", 
+      RowBox[{"Show", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<Insertion Sort\>\"", ",", "Bold", ",", "White", ",", "20"}],
+              "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"xscale", "*", 
+               RowBox[{"10", "/", "2"}]}], ",", 
+              RowBox[{"yscale", "*", "25"}]}], "}"}]}], "]"}], "}"}], "]"}], 
+        ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Purple", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"p1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"p1", "+", "xscale"}], ",", "p2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "p", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"p1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"p2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"b1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"b1", "+", "xscale"}], ",", "b2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "b", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"b1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"b2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"g1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"g1", "+", "xscale"}], ",", "g2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "g", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"g1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"g2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Yellow", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"y1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"y1", "+", "xscale"}], ",", "y2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "y", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"y1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"y2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"o1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"o1", "+", "xscale"}], ",", "o2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "o", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"o1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"o2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Pink", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"pi1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"pi1", "+", "xscale"}], ",", "pi2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "pi", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"pi1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"pi2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Red", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r1", "+", "xscale"}], ",", "r2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "r", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"r2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Brown", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"br1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"br1", "+", "xscale"}], ",", "br2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "br", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"br1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"br2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Gray", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"gr1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"gr1", "+", "xscale"}], ",", "gr2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "gr", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"gr1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"gr2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Cyan", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"bl1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"bl1", "+", "xscale"}], ",", "bl2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "bl", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"bl1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"bl2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}]}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "1"}], ",", 
+      RowBox[{"i", "<", "length"}], ",", 
+      RowBox[{"i", "+=", "1"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"key", " ", "=", " ", 
+        RowBox[{"valuesInsertionSort", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"j", " ", "=", " ", 
+        RowBox[{"i", "-", "1"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"j", "\[GreaterEqual]", "0"}], "&&", 
+          RowBox[{
+           RowBox[{"valuesInsertionSort", "[", 
+            RowBox[{"[", "j", "]"}], "]"}], ">", "key"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"valuesInsertionSort", "[", 
+            RowBox[{"[", 
+             RowBox[{"j", "+", "1"}], "]"}], "]"}], "=", 
+           RowBox[{"valuesInsertionSort", "[", 
+            RowBox[{"[", "j", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"j", " ", "=", " ", 
+           RowBox[{"j", " ", "-", "1"}]}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"valuesInsertionSort", "[", 
+         RowBox[{"[", 
+          RowBox[{"j", "+", "1"}], "]"}], "]"}], " ", "=", " ", "key"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"z", "=", "1"}], ",", 
+         RowBox[{"z", "<", "length"}], ",", 
+         RowBox[{"z", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "p"}], ",", " ", 
+            RowBox[{"p1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "b"}], ",", " ", 
+            RowBox[{"b1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "g"}], ",", " ", 
+            RowBox[{"g1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "y"}], ",", " ", 
+            RowBox[{"y1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "o"}], ",", " ", 
+            RowBox[{"o1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "pi"}], ",", " ", 
+            RowBox[{"pi1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "r"}], ",", " ", 
+            RowBox[{"r1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "br"}], ",", " ", 
+            RowBox[{"br1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "gr"}], ",", " ", 
+            RowBox[{"gr1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesInsertionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "bl"}], ",", " ", 
+            RowBox[{"bl1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"graphicsInsertionList", ",", 
+         RowBox[{"Show", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Text", "[", 
+              RowBox[{
+               RowBox[{"Style", "[", 
+                RowBox[{
+                "\"\<Insertion Sort\>\"", ",", "Bold", ",", "White", ",", 
+                 "20"}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"xscale", "*", 
+                  RowBox[{"10", "/", "2"}]}], ",", 
+                 RowBox[{"yscale", "*", "25"}]}], "}"}]}], "]"}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Purple", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"p1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"p1", "+", "xscale"}], ",", "p2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "p", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"p1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"p2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Blue", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"b1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"b1", "+", "xscale"}], ",", "b2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "b", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"b1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"b2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Green", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"g1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"g1", "+", "xscale"}], ",", "g2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "g", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"g1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"g2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Yellow", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"y1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"y1", "+", "xscale"}], ",", "y2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "y", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"y1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"y2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Orange", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"o1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"o1", "+", "xscale"}], ",", "o2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "o", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"o1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"o2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Pink", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"pi1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"pi1", "+", "xscale"}], ",", "pi2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "pi", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"pi1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"pi2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Red", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"r1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"r1", "+", "xscale"}], ",", "r2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "r", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"r1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"r2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Brown", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"br1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"br1", "+", "xscale"}], ",", "br2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "br", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"br1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"br2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Gray", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"gr1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"gr1", "+", "xscale"}], ",", "gr2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "gr", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"gr1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"gr2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Cyan", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"bl1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"bl1", "+", "xscale"}], ",", "bl2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "bl", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"bl1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"bl2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}]}], "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"SELECTION", " ", "SORT"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"minIndex", " ", "=", " ", 
+     RowBox[{"-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"temp", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"valuesSelectionSort", "=", "valuesOriginal"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p1", ",", " ", "b1", ",", " ", "g1", ",", " ", "y1", ",", " ", "o1", 
+       ",", "pi1", ",", " ", "r1", ",", "br1", ",", "gr1", ",", "bl1"}], 
+      "}"}], "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0", "*", "xscale"}], ",", 
+       RowBox[{"1", "*", "xscale"}], ",", 
+       RowBox[{"2", "*", "xscale"}], ",", 
+       RowBox[{"3", "*", "xscale"}], ",", 
+       RowBox[{"4", "*", "xscale"}], ",", 
+       RowBox[{"5", "*", "xscale"}], ",", 
+       RowBox[{"6", "*", "xscale"}], ",", 
+       RowBox[{"7", "*", "xscale"}], ",", 
+       RowBox[{"8", "*", "xscale"}], ",", 
+       RowBox[{"9", "*", "xscale"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"graphicsSelectionList", " ", "=", " ", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"graphicsSelectionList", ",", 
+      RowBox[{"Show", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<Selection Sort\>\"", ",", "Bold", ",", "White", ",", "20"}],
+              "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"xscale", "*", 
+               RowBox[{"10", "/", "2"}]}], ",", 
+              RowBox[{"yscale", "*", "25"}]}], "}"}]}], "]"}], "}"}], "]"}], 
+        ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Purple", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"p1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"p1", "+", "xscale"}], ",", "p2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "p", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"p1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"p2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"b1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"b1", "+", "xscale"}], ",", "b2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "b", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"b1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"b2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Green", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"g1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"g1", "+", "xscale"}], ",", "g2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "g", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"g1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"g2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Yellow", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"y1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"y1", "+", "xscale"}], ",", "y2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "y", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"y1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"y2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"o1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"o1", "+", "xscale"}], ",", "o2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "o", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"o1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"o2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Pink", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"pi1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"pi1", "+", "xscale"}], ",", "pi2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "pi", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"pi1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"pi2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Red", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"r1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r1", "+", "xscale"}], ",", "r2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "r", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"r2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Brown", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"br1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"br1", "+", "xscale"}], ",", "br2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "br", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"br1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"br2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Gray", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"gr1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"gr1", "+", "xscale"}], ",", "gr2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "gr", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"gr1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"gr2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Graphics", "[", 
+         RowBox[{"{", 
+          RowBox[{"Cyan", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"bl1", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"bl1", "+", "xscale"}], ",", "bl2"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", "bl", "]"}], ",", "Bold", ",", " ", 
+               "18"}], " ", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"bl1", "+", 
+                RowBox[{"xscale", "/", "2"}]}], ",", 
+               RowBox[{"bl2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+         "]"}]}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "0"}], ",", 
+      RowBox[{"i", "<", 
+       RowBox[{"length", "-", "1"}]}], ",", 
+      RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"minIndex", "=", " ", "i"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"j", "=", 
+          RowBox[{"i", "+", "1"}]}], ",", 
+         RowBox[{"j", "<", "length"}], ",", 
+         RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "j", "]"}], "]"}], "<", 
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "minIndex", "]"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"minIndex", "=", "j"}], ";"}]}], "\[IndentingNewLine]", 
+           "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"temp", " ", "=", " ", 
+        RowBox[{"valuesSelectionSort", "[", 
+         RowBox[{"[", "minIndex", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{
+        RowBox[{"valuesSelectionSort", "[", 
+         RowBox[{"[", "minIndex", "]"}], "]"}], " ", "=", " ", 
+        RowBox[{"valuesSelectionSort", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"valuesSelectionSort", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", "temp"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"z", "=", "1"}], ",", 
+         RowBox[{"z", "<", "length"}], ",", 
+         RowBox[{"z", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "p"}], ",", " ", 
+            RowBox[{"p1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "b"}], ",", " ", 
+            RowBox[{"b1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "g"}], ",", " ", 
+            RowBox[{"g1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "y"}], ",", " ", 
+            RowBox[{"y1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "o"}], ",", " ", 
+            RowBox[{"o1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "pi"}], ",", " ", 
+            RowBox[{"pi1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "r"}], ",", " ", 
+            RowBox[{"r1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "br"}], ",", " ", 
+            RowBox[{"br1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "gr"}], ",", " ", 
+            RowBox[{"gr1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"valuesSelectionSort", "[", 
+              RowBox[{"[", "z", "]"}], "]"}], "\[Equal]", "bl"}], ",", " ", 
+            RowBox[{"bl1", "=", 
+             RowBox[{"z", "*", "xscale"}]}]}], "]"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"graphicsSelectionList", ",", 
+         RowBox[{"Show", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Text", "[", 
+              RowBox[{
+               RowBox[{"Style", "[", 
+                RowBox[{
+                "\"\<Selection Sort\>\"", ",", "Bold", ",", "White", ",", 
+                 "20"}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"xscale", "*", 
+                  RowBox[{"10", "/", "2"}]}], ",", 
+                 RowBox[{"yscale", "*", "25"}]}], "}"}]}], "]"}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Purple", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"p1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"p1", "+", "xscale"}], ",", "p2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "p", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"p1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"p2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Blue", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"b1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"b1", "+", "xscale"}], ",", "b2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "b", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"b1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"b2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Green", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"g1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"g1", "+", "xscale"}], ",", "g2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "g", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"g1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"g2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Yellow", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"y1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"y1", "+", "xscale"}], ",", "y2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "y", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"y1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"y2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Orange", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"o1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"o1", "+", "xscale"}], ",", "o2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "o", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"o1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"o2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Pink", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"pi1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"pi1", "+", "xscale"}], ",", "pi2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "pi", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"pi1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"pi2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Red", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"r1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"r1", "+", "xscale"}], ",", "r2"}], "}"}]}], "]"}], 
+              ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "r", "]"}], ",", "Bold", ",", " ", 
+                  "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"r1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"r2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Brown", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"br1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"br1", "+", "xscale"}], ",", "br2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "br", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"br1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"br2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Gray", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"gr1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"gr1", "+", "xscale"}], ",", "gr2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "gr", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"gr1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"gr2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{"Cyan", ",", 
+              RowBox[{"Rectangle", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"bl1", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"bl1", "+", "xscale"}], ",", "bl2"}], "}"}]}], 
+               "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"ToString", "[", "bl", "]"}], ",", "Bold", ",", " ",
+                   "18"}], " ", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"bl1", "+", 
+                   RowBox[{"xscale", "/", "2"}]}], ",", 
+                  RowBox[{"bl2", "+", "yscale"}]}], "}"}]}], "]"}]}], "}"}], 
+            "]"}]}], "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"GraphicsRow", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"graphicsBubbleList", "[", 
+          RowBox[{"[", "a", "]"}], "]"}], ",", 
+         RowBox[{"graphicsInsertionList", "[", 
+          RowBox[{"[", "b", "]"}], "]"}], ",", 
+         RowBox[{"graphicsSelectionList", "[", 
+          RowBox[{"[", "c", "]"}], "]"}]}], "}"}], ",", 
+       RowBox[{"AspectRatio", "\[Rule]", 
+        RowBox[{"1", "/", "3"}]}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "1000"}], ",", 
+       RowBox[{"Frame", "\[Rule]", "All"}], ",", 
+       RowBox[{"Background", "\[Rule]", "Black"}], ",", 
+       RowBox[{"FrameStyle", "\[Rule]", "White"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"a", ",", "1", ",", "\"\<Bubble Sort Step\>\""}], "}"}], ",", 
+       "1", ",", 
+       RowBox[{"Length", "[", "graphicsBubbleList", "]"}], ",", "1"}], "}"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"b", ",", "1", ",", "\"\<Insertion Sort Step\>\""}], "}"}], 
+       ",", "1", ",", 
+       RowBox[{"Length", "[", "graphicsInsertionList", "]"}], ",", "1"}], 
+      "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"c", ",", "1", ",", "\"\<Selection Sort Step\>\""}], "}"}], 
+       ",", "1", ",", 
+       RowBox[{"Length", "[", "graphicsSelectionList", "]"}], ",", "1"}], 
+      "}"}]}], "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "My", " ", "project", " ", "gives", " ", "you", " ", "the", " ", 
+      "ability", " ", "to", " ", "compare", " ", "sorts", " ", "side", " ", 
+      "by", " ", 
+      RowBox[{"side", ".", " ", "It"}], " ", "gives", " ", "a", " ", "nice", 
+      " ", "visual", " ", "representation", " ", "of", " ", "how", " ", 
+      "sorts", " ", 
+      RowBox[{"work", ".", " ", "This"}], " ", "project", " ", "primarily", 
+      " ", "depended", " ", "on", " ", "figuring", " ", "out", " ", "how", 
+      " ", "to", " ", "display", " ", "and", " ", "\"\<move\>\"", " ", "each",
+       " ", "sort"}], ",", " ", 
+     RowBox[{
+     "how", " ", "to", " ", "make", " ", "the", " ", "display", " ", "look", 
+      " ", "polished"}], ",", " ", 
+     RowBox[{"and", " ", "working", " ", "with", " ", "complicated", " ", 
+      RowBox[{"manipulate", ".", " ", "I"}], " ", "tried", " ", "many", " ", 
+      "things", " ", "over", " ", "the", " ", "course", " ", "of", " ", "the",
+       " ", "project", " ", "including", " ", "associations"}], ",", " ", 
+     "pointers", ",", " ", 
+     RowBox[{"and", " ", 
+      RowBox[{"plots", ".", " ", "It"}], " ", "was", " ", "really", " ", 
+      "cool", " ", "finally", " ", "seeing", " ", "my", " ", "work", " ", 
+      "come", " ", "to", " ", "fruition", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+        "I", " ", "was", " ", "really", " ", "desperate", " ", "at", " ", 
+         "one", " ", "point"}], ")"}], ".", " ", "After"}], " ", "doing", " ",
+       "this", " ", "project", " ", "I", " ", "think", " ", "it", " ", 
+      "highlighted", " ", "an", " ", "important", " ", 
+      RowBox[{"detail", ".", " ", "There"}], " ", "are", " ", "specific", " ",
+       "things", " ", "that", " ", "work", " ", "well", " ", "in", " ", 
+      "Mathematica", " ", "and", " ", "then", " ", "there", " ", "are", " ", 
+      "those", " ", "that", " ", "do", " ", 
+      RowBox[{"not", ".", " ", "Unfortunately"}], " ", "it", " ", "caused", 
+      " ", "be", " ", "headache", " ", "trying", " ", "to", " ", "think", " ",
+       "in", " ", "a", " ", 
+      RowBox[{"Java", "/", "C"}], " ", 
+      RowBox[{"mindset", ".", " ", "Once"}], " ", "I", " ", "dropped", " ", 
+      "that", " ", "my", " ", "problems", " ", "began", " ", "to", " ", "be", 
+      " ", "solved", " ", "much", " ", 
+      RowBox[{"easier", ".", " ", "Awesome"}], " ", "experience", " ", "in", 
+      " ", "the", " ", "end", " ", "and", " ", "thanks", " ", "for", " ", 
+      "all", " ", "your", " ", "help", " ", "over", " ", "the", " ", 
+      RowBox[{"semeser", "!"}]}]}], " ", "*)"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.796743613237245*^9, 3.7967436777297363`*^9}, {
+   3.796743744268004*^9, 3.7967438044821377`*^9}, {3.796743891525231*^9, 
+   3.796743921562954*^9}, {3.796743956382619*^9, 3.7967441334103947`*^9}, {
+   3.7967442002125607`*^9, 3.796744200798571*^9}, {3.7967442743353357`*^9, 
+   3.796744297772915*^9}, {3.7967444141325703`*^9, 3.796744443659689*^9}, {
+   3.7967445576646833`*^9, 3.796744564869731*^9}, {3.79674639774807*^9, 
+   3.796746414985327*^9}, {3.796746545127028*^9, 3.796746549955368*^9}, {
+   3.7967466972549047`*^9, 3.796746852256846*^9}, {3.796746925220159*^9, 
+   3.79674698269466*^9}, {3.796747037060996*^9, 3.796747095482621*^9}, {
+   3.796747185075056*^9, 3.796747293539989*^9}, {3.79674737440489*^9, 
+   3.796747478143854*^9}, {3.796747920187416*^9, 3.796748033638279*^9}, 
+   3.796748143762701*^9, {3.7967481827583942`*^9, 3.796748182843233*^9}, {
+   3.79674832718749*^9, 3.796748377262904*^9}, 3.796748431788013*^9, {
+   3.796748508947627*^9, 3.796748512972314*^9}, {3.796748654318907*^9, 
+   3.796748822525547*^9}, {3.7967490143461313`*^9, 3.796749069164768*^9}, {
+   3.796749220117833*^9, 3.796749253838396*^9}, {3.796749402308956*^9, 
+   3.7967496663109703`*^9}, {3.796749705300494*^9, 3.796749727946957*^9}, {
+   3.796749785832383*^9, 3.7967497924399147`*^9}, {3.796750543823599*^9, 
+   3.796750554617613*^9}, {3.796750596725153*^9, 3.796750810150546*^9}, {
+   3.796750860780683*^9, 3.796750864873671*^9}, {3.796750903620016*^9, 
+   3.796751070381427*^9}, {3.7967522971254663`*^9, 3.7967524247740726`*^9}, {
+   3.796752466385282*^9, 3.796752581734487*^9}, {3.7967529426383743`*^9, 
+   3.796752993276574*^9}, {3.7967530283950863`*^9, 3.7967530370121193`*^9}, {
+   3.796753190133583*^9, 3.796753216311161*^9}, {3.796753248228924*^9, 
+   3.796753431331452*^9}, {3.796753465290093*^9, 3.7967534823800287`*^9}, {
+   3.796789413980833*^9, 3.796789430255334*^9}, {3.796789487194034*^9, 
+   3.796789561488244*^9}, {3.798081436090818*^9, 3.7980814447010393`*^9}, {
+   3.7980815553311243`*^9, 3.798081563784204*^9}, {3.798081701798746*^9, 
+   3.798081927232506*^9}, {3.798081987694213*^9, 3.798082070800186*^9}, {
+   3.7980823867432404`*^9, 3.798082458174081*^9}, {3.798082985406402*^9, 
+   3.798082986253275*^9}, {3.798601634096538*^9, 3.798601634490687*^9}, {
+   3.798601772572599*^9, 3.79860178722946*^9}, {3.798601911085266*^9, 
+   3.798601991262849*^9}, {3.798602818078539*^9, 3.798602949959464*^9}, {
+   3.79865540545124*^9, 3.798655415538463*^9}, {3.798655468799773*^9, 
+   3.798655469148356*^9}, 3.798655567391547*^9, {3.7986556180558767`*^9, 
+   3.798655673025737*^9}, {3.798655732812992*^9, 3.798655767499114*^9}, {
+   3.7986558035669327`*^9, 3.798655835488011*^9}, {3.798655939973834*^9, 
+   3.798656257115745*^9}, {3.7986563097845373`*^9, 3.798656457412443*^9}, {
+   3.798656536215722*^9, 3.7986565380175343`*^9}, {3.7986565839498167`*^9, 
+   3.798656687812443*^9}, {3.798657339636561*^9, 3.798657371767538*^9}, {
+   3.798657444233244*^9, 3.7986575007796097`*^9}, {3.7986576404659853`*^9, 
+   3.798657662051916*^9}, {3.7986577163560534`*^9, 3.798657726386238*^9}, {
+   3.798657835089733*^9, 3.798657835187875*^9}, {3.798657889461812*^9, 
+   3.798657889778696*^9}, {3.798658087287407*^9, 3.798658089938621*^9}, 
+   3.79865812178699*^9, {3.7986585622164383`*^9, 3.7986586186595163`*^9}, {
+   3.798658657459621*^9, 3.798658657657548*^9}, {3.798658692854372*^9, 
+   3.798658702320483*^9}, {3.798658855889522*^9, 3.798658856292334*^9}, {
+   3.7986588919963427`*^9, 3.798658916576445*^9}, {3.7986589634211063`*^9, 
+   3.79865896402483*^9}, {3.798659016495029*^9, 3.798659064677342*^9}, {
+   3.798659339890596*^9, 3.7986594911135187`*^9}, {3.79865955340107*^9, 
+   3.7986595540522823`*^9}, {3.798659758685554*^9, 3.798659965160578*^9}, {
+   3.798660005389752*^9, 3.798660031045567*^9}, {3.798660347350544*^9, 
+   3.7986603900226*^9}, {3.798660461578336*^9, 3.798660538867379*^9}, {
+   3.798660616986248*^9, 3.798660692062549*^9}, {3.798660748304632*^9, 
+   3.798660846847628*^9}, {3.798660959371777*^9, 3.798661027575622*^9}, {
+   3.7986611169563713`*^9, 3.7986611185615387`*^9}, {3.798661222468264*^9, 
+   3.7986612986640043`*^9}, {3.798661361278463*^9, 3.798661375432815*^9}, {
+   3.798661914355165*^9, 3.798661915740823*^9}, {3.798661959770306*^9, 
+   3.7986620645806923`*^9}, {3.79866217026049*^9, 3.798662208375979*^9}, {
+   3.7986622693671627`*^9, 3.798662289867992*^9}, {3.7986623246636677`*^9, 
+   3.798662382463067*^9}, {3.798662463263255*^9, 3.7986625231423492`*^9}, {
+   3.798662675582238*^9, 3.798662689979197*^9}, {3.798665824480734*^9, 
+   3.798665874717146*^9}, {3.7986660049831038`*^9, 3.798666214436152*^9}, {
+   3.7986662563927927`*^9, 3.798666382658387*^9}, {3.798666421336018*^9, 
+   3.798666515394944*^9}, {3.7986665817043753`*^9, 3.798666585593857*^9}, {
+   3.7986666591785088`*^9, 3.798666672152807*^9}, {3.798666719117339*^9, 
+   3.798666730231572*^9}, {3.7986668647173357`*^9, 3.798666985861264*^9}, {
+   3.798667073438239*^9, 3.798667198141642*^9}, {3.7986672596467752`*^9, 
+   3.798667318665367*^9}, {3.7986675856639643`*^9, 3.798667640156582*^9}, {
+   3.798669780292904*^9, 3.7986698132870893`*^9}, {3.798669984543893*^9, 
+   3.798670054453189*^9}, {3.798670091413838*^9, 3.7986702124259157`*^9}, {
+   3.7986702641113663`*^9, 3.7986703787450666`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"61fa5460-4aa6-4075-ac88-c37473259fc9"]
+},
+WindowSize->{1280, 693},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 286, 8, 58, "Text",ExpressionUUID->"8ff3296c-1421-4d42-aaaf-0ef2343499cc"],
+Cell[847, 30, 95562, 2310, 4063, "Input",ExpressionUUID->"61fa5460-4aa6-4075-ac88-c37473259fc9"]
+}
+]
+*)
+
